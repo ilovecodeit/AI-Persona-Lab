@@ -1,0 +1,6 @@
+{
+  "name": "Gemini Creative Studio",
+  "description": "AI 페르소나 대화, 다차원 개념 번역기, 맞춤형 창작 도우미를 제공하는 지능형 크리에이티브 스튜디오입니다.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

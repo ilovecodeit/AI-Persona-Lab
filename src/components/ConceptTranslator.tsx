@@ -34,14 +34,21 @@ export default function ConceptTranslator() {
       });
 
       if (!response.ok) {
-        throw new Error("개념 번역을 불러오는데 실패했습니다.");
+        let errMsg = `서버 오류 (상태 코드: ${response.status})`;
+        try {
+          const errData = await response.json();
+          if (errData && errData.error) {
+            errMsg = `서버 오류 (${response.status}): ${errData.error}`;
+          }
+        } catch (_) {}
+        throw new Error(errMsg);
       }
 
       const data = await response.json();
       setResult(data);
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
-      alert("분석 오류가 발생했습니다. 나중에 다시 시도해주세요.");
+      alert(error.message || "분석 오류가 발생했습니다. 나중에 다시 시도해주세요.");
     } finally {
       setLoading(false);
     }

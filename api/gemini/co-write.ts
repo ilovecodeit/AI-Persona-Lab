@@ -53,10 +53,7 @@ export default async function handler(req: any, res: any) {
           },
           required: ["title", "synopsis", "characters", "openingScene", "keyThemes"]
         },
-        temperature: 0.8,
-        thinkingConfig: {
-          thinkingLevel: GEMINI_CONFIG.THINKING_LEVEL
-        }
+        temperature: 0.8
       }
     });
 

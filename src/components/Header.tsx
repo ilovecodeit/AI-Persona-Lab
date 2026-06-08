@@ -20,7 +20,7 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
           <div className="flex items-center gap-2 mb-2">
             <span className="bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 px-3 py-1 text-xs font-semibold rounded-full tracking-wider flex items-center gap-1">
               <Sparkles className="w-3.5 h-3.5" />
-              Gemini 3.5 Flash Powered
+              Gemini 2.5 Flash Powered
             </span>
             <span className="flex items-center gap-1.5 text-xs text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20 font-medium">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>

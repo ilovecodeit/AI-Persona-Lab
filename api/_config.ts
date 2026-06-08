@@ -1,8 +1,7 @@
-import { GoogleGenAI, ThinkingLevel } from "@google/genai";
+import { GoogleGenAI } from "@google/genai";
 
 export const GEMINI_CONFIG = {
-  MODEL_NAME: "gemini-3.1-flash-lite",
-  THINKING_LEVEL: ThinkingLevel.LOW,
+  MODEL_NAME: "gemini-2.5-flash",
   TIMEOUT_MS: 50000, // 50 seconds
 };
 

@@ -50,14 +50,21 @@ export default function CreativeWriter() {
       });
 
       if (!response.ok) {
-        throw new Error("스토리 생성 도중 요류가 야기되었습니다.");
+        let errMsg = `서버 오류 (상태 코드: ${response.status})`;
+        try {
+          const errData = await response.json();
+          if (errData && errData.error) {
+            errMsg = `서버 오류 (${response.status}): ${errData.error}`;
+          }
+        } catch (_) {}
+        throw new Error(errMsg);
       }
 
       const data = await response.json();
       setSynopsis(data);
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
-      alert("공동 창작 스토리를 구축하는 중에 실패했습니다. 잠시 후 시도해 주십시오.");
+      alert(err.message || "공동 창작 스토리를 구축하는 중에 실패했습니다. 잠시 후 시도해 주십시오.");
     } finally {
       setLoading(false);
     }

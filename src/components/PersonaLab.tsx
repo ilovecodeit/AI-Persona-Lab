@@ -125,7 +125,14 @@ export default function PersonaLab() {
       });
 
       if (!response.ok) {
-        throw new Error("서버와의 원활한 소통에 실패했습니다.");
+        let errMsg = `서버 오류 (상태 코드: ${response.status})`;
+        try {
+          const errData = await response.json();
+          if (errData && errData.error) {
+            errMsg = `서버 오류 (${response.status}): ${errData.error}`;
+          }
+        } catch (_) {}
+        throw new Error(errMsg);
       }
 
       const data = await response.json();

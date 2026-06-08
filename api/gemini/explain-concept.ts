@@ -31,10 +31,7 @@ export default async function handler(req: any, res: any) {
           },
           required: ["keyword", "childStyle", "snsStyle", "academicStyle"]
         },
-        temperature: 0.7,
-        thinkingConfig: {
-          thinkingLevel: GEMINI_CONFIG.THINKING_LEVEL
-        }
+        temperature: 0.7
       }
     });
 

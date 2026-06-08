@@ -31,10 +31,7 @@ export default async function handler(req: any, res: any) {
       config: {
         systemInstruction: systemPrompt,
         temperature: 0.9,
-        topP: 0.95,
-        thinkingConfig: {
-          thinkingLevel: GEMINI_CONFIG.THINKING_LEVEL
-        }
+        topP: 0.95
       }
     });
 

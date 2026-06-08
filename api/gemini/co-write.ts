@@ -2,6 +2,8 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { Type } from "@google/genai";
 import { getGeminiClient } from "../_client.js";
 
+export const maxDuration = 60;
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed. Use POST." });
@@ -22,7 +24,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 위 조건들을 바탕으로 깊고 매력적인 시놉시스, 캐릭터 설정, 그리고 극의 시작을 알리는 명오프닝 장면에 대한 지시문과 대사 대본을 전문 스토리 작가처럼 작성해 주세요.`;
 
     const response = await ai.models.generateContent({
-      model: "gemini-3.5-flash",
+      model: "gemini-2.5-flash",
       contents: prompt,
       config: {
         responseMimeType: "application/json",

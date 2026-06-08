@@ -1,6 +1,6 @@
 export const config = { maxDuration: 60 };
 
-import { getGeminiClient, GEMINI_CONFIG, handleError } from "../_config";
+import { getGeminiClient, GEMINI_CONFIG, handleError } from "../_config.js";
 import { Type } from "@google/genai";
 
 export default async function handler(req: any, res: any) {

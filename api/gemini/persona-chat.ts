@@ -1,6 +1,6 @@
 export const config = { maxDuration: 60 };
 
-import { getGeminiClient, GEMINI_CONFIG, PERSONA_SYSTEM_PROMPTS, handleError } from "../_config";
+import { getGeminiClient, GEMINI_CONFIG, PERSONA_SYSTEM_PROMPTS, handleError } from "../_config.js";
 
 export default async function handler(req: any, res: any) {
   if (req.method !== "POST") {
